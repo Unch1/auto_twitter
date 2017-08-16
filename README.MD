@@ -2,7 +2,7 @@
 `$ gem install selenium-webdriver`
 `activate geckodriver`
 `$ brew install watch`
-`$ watch -n 1800 ruby path/to/this/project/auto_favo_RT_with_selenium.rb`
+`$ watch -n 1800 ruby path/to/this/project/auto_favo_RT_with_selenium.rb` to run every 30 minutes.
 
 this program sometimes occurs error because of twitter specifications.
 If you desire strict result, try another way.
