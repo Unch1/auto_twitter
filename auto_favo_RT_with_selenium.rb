@@ -10,15 +10,15 @@ user_names = [
 for user_name in user_names do
   driver = Selenium::WebDriver.for :firefox
 
-  driver.get "https://twitter.com"
+  driver.get "https://twitter.com/login"
 
   # ログインする
   sleep 1
   begin
-    driver.find_element(:class, "js-login").click
-    driver.find_element(:name, "session[username_or_email]").send_key "#{user_name}"
-    driver.find_element(:name, "session[password]").send_key "password" #パスワードは全部同じとして
-    driver.find_element(:class, "js-submit").click
+      driver.find_element(:xpath, '//*[@id="page-container"]/div/div[1]/form/fieldset/div[1]/input').send_key "#{user_name}"
+      driver.find_element(:xpath, '//*[@id="page-container"]/div/div[1]/form/fieldset/div[2]/input').send_key "password"
+      driver.find_element(:xpath, '//*[@id="page-container"]/div/div[1]/form/div[2]/button').click
+
   rescue
     driver.quit
     puts "login error"
